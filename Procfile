@@ -1,1 +1,1 @@
-web: gunicorn rp-portfolio.wsgi:application -b 0.0.0.0:$PORT
+web: python rp-portfolio/manage.py runserver "0.0.0.0:$PORT"
