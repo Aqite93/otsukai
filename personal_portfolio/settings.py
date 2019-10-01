@@ -80,12 +80,20 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     # }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'portfolio',
+    #     'USER': 'root',
+    #     'PASSWORD': '8693Aqite',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'portfolio',
-        'USER': 'root',
-        'PASSWORD': '8693Aqite',
-        'HOST': 'localhost',
+        'NAME': 'heroku_6beaad87743147d',
+        'USER': 'b42b4dab48487b',
+        'PASSWORD': '4fee621b',
+        'HOST': 'us-cdbr-iron-east-05.cleardb.net',
         'PORT': '3306',
     }
 }
