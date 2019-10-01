@@ -1,13 +1,16 @@
 from django.shortcuts import render
-from projects.models import Project
+from projects.models.models import Project
+from django.conf import settings
 
 
 def project_index(request):
+    print(settings.BASE_DIR)
+    print(settings.STATIC_ROOT)
     projects = Project.objects.all()
     context = {
         'projects': projects
     }
-    return render(request, 'project_index.html', context)
+    return render(request, 'login.html', context)
 
 
 def project_detail(request, pk):

@@ -6,7 +6,7 @@
             "title": "My First Project",
             "description": "A web development project.",
             "technology": "Django",
-            "image": "img/project1.png"
+            "image": "https://otsukai.s3-ap-northeast-1.amazonaws.com/self_portlate_1.jpeg"
         }
     },
     {
@@ -16,7 +16,7 @@
             "title": "My Second Project",
             "description": "Another web development project.",
             "technology": "Flask",
-            "image": "img/project2.png"
+            "image": "https://otsukai.s3-ap-northeast-1.amazonaws.com/self_portlate_2.jpeg"
         }
     },
     {
@@ -26,7 +26,7 @@
             "title": "My Third Project",
             "description": "A final development project.",
             "technology": "Django",
-            "image": "img/project3.png"
+            "image": "https://otsukai.s3-ap-northeast-1.amazonaws.com/self_portlate_3.jpeg"
         }
     }
 ]
