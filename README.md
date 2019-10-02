@@ -2,6 +2,7 @@
 This is an app that requests errand.
 
 # Description
+## apps
 - accounts app  
 management users.
     - register, login, logout
@@ -10,6 +11,10 @@ management users.
 request errand functions.  
     - select partners
     - send mail users and partners
+
+## heroku
+access [here](https://fathomless-mesa-47202.herokuapp.com/)
+
 
 # Requirement
 ## python library
