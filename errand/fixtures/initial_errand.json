@@ -1,0 +1,10 @@
+[
+    {
+        "model": "errand.Errand",
+        "pk": 1,
+        "fields": {
+            "user_id": 1,
+            "description": "Would you buy famous souvenirs from Akita Prefecture?"
+        }
+    }
+]
