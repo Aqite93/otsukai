@@ -32,3 +32,7 @@ python manage.py runserver 0.0.0.0:8000
 ```bash
 python manage.py migrate
 ```
+- load initial data
+```bash
+python manage.py loaddata initial_user.json
+```
