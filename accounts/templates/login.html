@@ -20,7 +20,7 @@
             <span class="warning" tabindex="-1" role="alert">入力した情報が正しくありません。内容を確認の上、再度入力してください。</span>
         </div>
         {% endif %}
-        <form method="POST" action="{% url 'login' %}">
+        <form method="POST" action="{% url 'accounts:login' %}">
             {% csrf_token %}
             <div class="form-item">
                 <label for="email"></label>
