@@ -2,6 +2,9 @@
 {% load static %}
 {% block page_content %}
 <h1>Requests</h1>
+{% if mail %}
+<div class="alert alert-success" role="alert">A confirmation email has been sent to you. Please check it.</div>
+{% endif %}
 <div class="row">
     {{ formset.management_form }}
     {% for form in formset %}
@@ -10,8 +13,8 @@
             <div class="card-body">
                 <h5 class="card-title"></h5>
                 {{ form.description }}
-                <a href="#" class="btn btn-primary">
-                    Receive request!
+                <a href="{% url 'mail:sendmail' %}" class="btn btn-primary">
+                    Receive
                 </a>
             </div>
         </div>
