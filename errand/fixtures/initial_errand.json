@@ -6,5 +6,29 @@
             "user_id": 1,
             "description": "Would you buy famous souvenirs from Akita Prefecture?"
         }
+    },
+    {
+        "model": "errand.Errand",
+        "pk": 2,
+        "fields": {
+            "user_id": 1,
+            "description": "Since I'm free for 1 hour from 12:00 tomorrow, so do you have anyone to talk to?"
+        }
+    },
+    {
+        "model": "errand.Errand",
+        "pk": 3,
+        "fields": {
+            "user_id": 1,
+            "description": "Does anyone have a dinner with you?"
+        }
+    },
+    {
+        "model": "errand.Errand",
+        "pk": 4,
+        "fields": {
+            "user_id": 1,
+            "description": "Hi! Does anyone teach me mathematics!"
+        }
     }
 ]

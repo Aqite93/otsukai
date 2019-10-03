@@ -1,14 +1,13 @@
 from django.shortcuts import render
 from django.views import View
 from .models import Errand
-from .forms import ErrandIndexForm
+from .forms import ErrandIndexFormSet
 
 
 class ErrandIndexView(View):
     def get(self, request):
-        errands = Errand.objects.all()
-        form = ErrandIndexForm(errands)
+        formset = ErrandIndexFormSet(request.POST or None)
 
         return render(request, 'errands_index.html', context={
-            'form': form
+            'formset': formset
         })
