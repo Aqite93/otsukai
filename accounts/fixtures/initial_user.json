@@ -1,0 +1,14 @@
+[
+    {
+        "model": "accounts.User",
+        "pk": 1,
+        "fields": {
+            "email": "Aqite93@gmail.com",
+            "username": "Ryosasaki",
+            "password": "test1234",
+            "address": "Katsushi-ku",
+            "age": "27",
+            "gender": "man"
+        }
+    }
+]
