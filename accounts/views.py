@@ -25,4 +25,4 @@ class LoginView(View):
                 'message': '入力した情報が正しくありません。内容を確認の上、再度入力してください。'
             })
 
-        return redirect(reverse('accounts:login'))
+        return redirect(reverse('errand:index'))

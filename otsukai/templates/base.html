@@ -5,24 +5,17 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-        <a class="navbar-brand" href="{% url 'project_index' %}">Otsukai</a>
+        <a class="navbar-brand" href="{% url 'errand:index' %}">Otsukai</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'project_index' %}">Home</a>
-                    <a class="nav-link" href="{% url 'project_index' %}">request</a>
-                    <a class="nav-link" href="{% url 'project_index' %}">receive request</a>
-                </li>
-            </ul> -->
             <nav class="nav">
-                <a class="nav-link active" href="{% url 'project_index' %}">Home</a>
-                <a class="nav-link" href="{% url 'project_index' %}">request</a>
-                <a class="nav-link" href="{% url 'project_index' %}">receive request</a>
+                <a class="nav-link active" href="{% url 'errand:index' %}">Home</a>
+                <a class="nav-link" href="{% url 'errand:index' %}">request</a>
+                <a class="nav-link" href="{% url 'errand:index' %}">receive request</a>
             </nav>
         </div>
     </div>
