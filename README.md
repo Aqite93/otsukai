@@ -13,7 +13,8 @@ request errand functions.
     - send mail users and partners
 
 - mail  
-send email to user when receive errand.
+send email to user when receive errand, and send notification to slack.  
+**Note**: This is mock app so send it to dango-team of ITProjectPromotion which is a test workspace.
 
 ## heroku
 access [here](https://fathomless-mesa-47202.herokuapp.com/)

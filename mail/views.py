@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.core.mail import send_mail
 # from django.http import HttpResponse
 from errand.forms import ErrandIndexFormSet
+import requests
+import json
 
 
-def send(request):
-    print(f'request: {request}')
+def send_mail_via_gmail(request):
     subject = "otshukai: You are assigned request of errand!"
     """本文"""
     message = "You have accepted errand."
@@ -19,6 +20,21 @@ def send(request):
 
     send_mail(subject, message, from_email, recipient_list)
     # return HttpResponse('<h1>email send complete.</h1>')
+
+
+def send_slack():
+    requests.post('https://hooks.slack.com/services/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', data=json.dumps({
+        'text': u'Notification that you received errand.',  # 投稿するテキスト
+        'username': u'otsukai, inc. ',  # 投稿のユーザー名
+        'icon_emoji': u':ghost:',  # 投稿のプロフィール画像に入れる絵文字
+        'link_names': 1,  # メンションを有効にする
+    }))
+
+
+def send(request):
+    print(f'request: {request}')
+    send_mail_via_gmail(request)
+    send_slack()
 
     formset = ErrandIndexFormSet(request.POST or None)
 
