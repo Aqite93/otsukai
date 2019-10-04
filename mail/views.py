@@ -23,7 +23,7 @@ def send_mail_via_gmail(request):
 
 
 def send_slack():
-    requests.post('https://hooks.slack.com/services/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', data=json.dumps({
+    requests.post('https://hooks.slack.com/services/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', data=json.dumps({
         'text': u'Notification that you received errand.',  # 投稿するテキスト
         'username': u'otsukai, inc. ',  # 投稿のユーザー名
         'icon_emoji': u':ghost:',  # 投稿のプロフィール画像に入れる絵文字
