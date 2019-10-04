@@ -7,7 +7,7 @@ import json
 
 
 def send_mail_via_gmail(request):
-    subject = "otshukai: You are assigned request of errand!"
+    subject = "otshukai: You are assigned request of errand."
     message = "You have accepted errand."
     from_email = "notification@otsukai.com"
     recipient_list = [
