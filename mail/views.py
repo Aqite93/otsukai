@@ -28,7 +28,6 @@ def send_slack():
 
 
 def send(request):
-    print(f'request: {request}')
     send_mail_via_gmail(request)
     send_slack()
 
