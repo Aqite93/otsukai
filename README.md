@@ -16,6 +16,9 @@ request errand functions.
 send email to user when receive errand, and send notification to slack.  
 **Note**: This is mock app so send it to dango-team of ITProjectPromotion which is a test workspace.
 
+- prediction  
+enter your rank and capacity, returns your future s\*l\*r\*!
+
 ## heroku
 access [here](https://fathomless-mesa-47202.herokuapp.com/)
 
