@@ -22,4 +22,5 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('errand.urls')),
     path('', include('mail.urls')),
+    path('', include('prediction.urls')),
 ]
