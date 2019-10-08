@@ -10,13 +10,21 @@
 
 <body>
     <div class="form-wrapper">
-        <h1><font color="red">Prediciton(Confidential)</font></h1>
-        <h2>{{ salary }}</h2>
-        <div class="form-footer">
-        </div>
-        <a href="{% url 'errand:index' %}" class="btn btn-primary">
-            back
-        </a>
+        <h1>Prediction sulary</h1>
+        <form method="POST" action="{% url 'prediction:culculate' %}">
+            {% csrf_token %}
+            <div class="form-item">
+                <label for="rank"></label>
+                {{ form.rank }}
+            </div>
+            <div class="form-item">
+                <label for="capacity"></label>
+                {{ form.capacity }}
+            </div>
+            <div class="button-panel">
+                <input type="submit" class="button" title="" value="send"></input>
+            </div>
+        </form>
     </div>
 </body>
 
