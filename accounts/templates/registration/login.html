@@ -16,11 +16,11 @@
             <span class="warning" tabindex="-1" role="alert">入力した情報が正しくありません。内容を確認の上、再度入力してください。</span>
         </div>
         {% endif %}
-        <form method="POST" action="{% url 'accounts:login' %}">
+        <form method="POST" action="{% url 'accounts:login-page' %}">
             {% csrf_token %}
             <div class="form-item">
                 <label for="email"></label>
-                {{ form.email }}
+                <input type="email" name="email">
             </div>
             <div class="form-item">
                 <label for="password"></label>
