@@ -25,10 +25,5 @@ class LoginView(View):
                 'form': form,
                 'message': '入力した情報が正しくありません。内容を確認の上、再度入力してください。'
             })
-        # if not User.objects.filter(email=email, password=password).exists():
-        #     return render(request, 'login.html', context={
-        #         'form': form,
-        #         'message': '入力した情報が正しくありません。内容を確認の上、再度入力してください。'
-        #     })
 
         return redirect(reverse('errand:index'))
