@@ -159,7 +159,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'otsukai/static')
 # Set custom user model
 AUTH_USER_MODEL = 'accounts.User'
 
+# Login url
+LOGIN_URL = 'accounts:login'
+
 # Redirect url after login
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# cokkie
+SESSION_COOKIE_AGE = 3600
 
 django_heroku.settings(locals())
