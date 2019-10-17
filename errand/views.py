@@ -11,3 +11,10 @@ class ErrandIndexView(LoginRequiredMixin, View):
         return render(request, 'errands_index.html', context={
             'formset': formset
         })
+
+
+class ErrandRegisterView(LoginRequiredMixin, View):
+    def get(self, request):
+
+        return render(request, 'errands_register.html', context={
+        })
