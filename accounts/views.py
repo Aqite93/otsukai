@@ -4,6 +4,8 @@ from django.views import View
 from django.contrib.auth import authenticate, login, logout
 from .forms import UserForm
 from .models import User
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
 
 
 def logout_view(request):
@@ -12,13 +14,6 @@ def logout_view(request):
 
 
 class LoginView(View):
-    def get(self, request):
-        form = UserForm()
-
-        return render(request, 'login.html', context={
-            'form': form
-        })
-
     def post(self, request):
         form = UserForm(request.POST)
         email = request.POST.get('email', None)
@@ -36,3 +31,17 @@ class LoginView(View):
             })
 
         return redirect(reverse('errand:index'))
+        # elif '_singup' in request.POST:
+        #     print('--- pushed sing up button! ---')
+        #     return redirect(reverse('accounts:singup'))
+
+
+class SignUp(CreateView):
+    model = User
+    form_class = UserForm
+    template_name = "signup.html"
+    success_url = reverse_lazy('accounts:login')
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)

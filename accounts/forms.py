@@ -1,8 +1,9 @@
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 from .models import User
 
 
-class UserForm(forms.ModelForm):
+class UserForm(UserCreationForm):
     email = forms.EmailField(
         label='Email',
         required=True,
@@ -13,8 +14,18 @@ class UserForm(forms.ModelForm):
         )
     )
 
-    password = forms.CharField(
-        label='Password',
+    password1 = forms.CharField(
+        label='Password1',
+        required=True,
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder': 'パスワードを半角英数字記号を組み合わせた8桁以上で入力してください．'
+            }
+        )
+    )
+
+    password2 = forms.CharField(
+        label='Password2',
         required=True,
         widget=forms.PasswordInput(
             attrs={
@@ -25,4 +36,7 @@ class UserForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('email', 'password')
+        fields = ('email', 'password1', 'password2',)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
