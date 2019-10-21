@@ -18,3 +18,8 @@ class ErrandRegisterView(LoginRequiredMixin, View):
 
         return render(request, 'errands_register.html', context={
         })
+
+    def post(self, request):
+        print(request.POST)
+        return render(request, 'errands_register.html', context={
+        })
