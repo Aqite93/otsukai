@@ -32,7 +32,7 @@ class UserExtendManager(UserManager):
 
 
 class User(AbstractBaseUser):
-    user_id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     email = models.EmailField('Email', unique=True)
     username = models.CharField('User Name', max_length=100)
     password = models.CharField('Password', max_length=100)
