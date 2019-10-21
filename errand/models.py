@@ -7,8 +7,11 @@ class Errand(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.TextField(max_length=1024,
-                                   blank=True,
+    deadline = models.DateTimeField()
+    price = models.IntegerField()
+    image = models.FileField(name='image')
+    description = models.TextField(blank=True,
+                                   max_length=1000,
                                    help_text='依頼内容を記載してください．')
 
     class Meta:
