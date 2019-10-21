@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import ErrandIndexFormSet
+from .forms import ErrandIndexFormSet, ErrandRegisterForm
 
 
 class ErrandIndexView(LoginRequiredMixin, View):
@@ -15,8 +15,10 @@ class ErrandIndexView(LoginRequiredMixin, View):
 
 class ErrandRegisterView(LoginRequiredMixin, View):
     def get(self, request):
-
+        print('--- errand register view start ---')
+        form = ErrandRegisterForm(request.POST or None)
         return render(request, 'errands_register.html', context={
+            'form': form
         })
 
     def post(self, request):

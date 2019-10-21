@@ -47,4 +47,4 @@ class ErrandRegisterForm(forms.ModelForm):
 
     class Meta:
         model = Errand
-        fields = ('description',)
+        fields = ('category', 'deadline', 'price', 'image', 'comments')
