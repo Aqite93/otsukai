@@ -4,6 +4,7 @@
         "pk": 1,
         "fields": {
             "user_id": 1,
+            "category": 1,
             "description": "Would you buy famous souvenirs from Akita Prefecture?"
         }
     },
@@ -12,6 +13,7 @@
         "pk": 2,
         "fields": {
             "user_id": 1,
+            "category": 1,
             "description": "Since I'm free for 1 hour from 12:00 tomorrow, so do you have anyone to talk to?"
         }
     },
@@ -20,6 +22,7 @@
         "pk": 3,
         "fields": {
             "user_id": 1,
+            "category": 1,
             "description": "Does anyone have a dinner with you?"
         }
     },
@@ -28,6 +31,7 @@
         "pk": 4,
         "fields": {
             "user_id": 1,
+            "category": 1,
             "description": "Hi! Does anyone teach me mathematics!"
         }
     }
