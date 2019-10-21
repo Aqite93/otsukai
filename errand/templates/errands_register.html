@@ -2,7 +2,7 @@
 {% load static %}
 {% block page_content %}
 <h1>Register errand</h1>
-<form>
+<form method="post" enctype="multipart/form-data">
     <div class="form-group">
         {{ formset.management_form }}
         <div class="col-md-4">
@@ -14,7 +14,7 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label>Deadline</label>
-                <input type="text" class="form-control">
+                <input type="date" class="form-control">
             </div>
         </div>
         <div class="col-md-4">
@@ -25,7 +25,9 @@
         </div>
         <div class="col-md-4">
             <label>Image</label>
-            <div class="imagePreview"></div>
+            <span>
+                <div><img id="imagePreview"></div>
+            </span>
             <div class="input-group">
                 <label class="input-group-btn">
                     <span class="btn btn-primary">
@@ -46,6 +48,8 @@
 <script>
     $('.uploadFile').change(function () {
         if (this.files.length > 0) {
+            var value = this.value;
+            console.log(value)
             // 選択されたファイル情報を取得
             var file = this.files[0];
 
@@ -53,14 +57,15 @@
             var reader = new FileReader();
             reader.readAsDataURL(file);
 
+            // 画像表示枠のsrcにreaderの結果をセット
             reader.onload = function () {
-                $('#thumbnail').attr('src', reader.result);
+                $('#imagePreview').attr('src', reader.result);
             }
         }
     });
 </script>
 <style type="text/css">
-    .imagePreview {
+    #imagePreview {
         width: 100%;
         height: 180px;
         background-position: center center;
