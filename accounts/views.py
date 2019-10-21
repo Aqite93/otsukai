@@ -31,9 +31,6 @@ class LoginView(View):
             })
 
         return redirect(reverse('errand:index'))
-        # elif '_singup' in request.POST:
-        #     print('--- pushed sing up button! ---')
-        #     return redirect(reverse('accounts:singup'))
 
 
 class SignUp(CreateView):
