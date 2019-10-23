@@ -3,9 +3,15 @@ from .models import Errand, Category
 
 
 class ErrandIndexForm(forms.ModelForm):
+
     class Meta:
         model = Errand
-        fields = ('image', 'description',)
+        fields = ('image', 'description', 'category', 'deadline', 'price')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs["class"] = "form-control"
 
 
 ErrandIndexFormSet = forms.modelformset_factory(

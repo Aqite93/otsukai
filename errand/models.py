@@ -10,7 +10,6 @@ class Errand(models.Model):
     deadline = models.DateTimeField()
     price = models.IntegerField()
     image = models.ImageField(
-        name='image',
         upload_to='photos/%Y/%m/%d/')
     description = models.TextField(blank=True,
                                    max_length=1000,

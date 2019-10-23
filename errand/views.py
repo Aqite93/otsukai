@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from accounts.models import User
-from .models import Errand
 from .forms import ErrandIndexFormSet, ErrandRegisterForm
 
 
@@ -10,9 +9,6 @@ class ErrandIndexView(LoginRequiredMixin, View):
     def get(self, request):
         print('--- errand index view start ---')
         formset = ErrandIndexFormSet()
-
-        # for form in formset:
-        #     print(form['image'].value())
 
         return render(request, 'errands_index.html', context={
             'formset': formset

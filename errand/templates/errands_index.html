@@ -12,6 +12,10 @@
         <div class="card mb-2">
             <div class="card-body">
                 <h5 class="card-title"></h5>
+                {{ form.category }}
+                {{ form.deadline }}
+                {{ form.price }}
+                <img src="/media/{{ form.image.value }}" class='' height='235' width='235'>
                 {{ form.description }}
                 <a href="{% url 'mail:sendmail' %}" class="btn btn-primary">
                     Receive
