@@ -9,21 +9,19 @@
         <div class="col-md-4">
             <div class="form-group">
                 <label>Category</label>
-                <!-- <input type="text" class="form-control"> -->
                 {{ form.category }}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <label>Deadline</label>
-                <!-- <input type="date" class="form-control"> -->
                 {{ form.deadline }}
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 <label>Price</label>
-                <input type="text" class="form-control">
+                {{ form.price }}
             </div>
         </div>
         <div class="col-md-4">
@@ -34,16 +32,17 @@
             <div class="input-group">
                 <label class="input-group-btn">
                     <span class="btn btn-primary">
-                        Choose File<input type="file" style="display:none" class="uploadFile">
+                        Choose File
+                        {{ form.image }}
                     </span>
                 </label>
-                <input type="text" class="form-control" readonly="">
+                <input type="text" class="form-control" id="uploadFileName" readonly="">
             </div>
         </div>
         <div class="col-md-8">
             <div class="form-group">
                 <label>Comments</label>
-                <textarea class="form-control" rows="10" cols="60"></textarea>
+                {{ form.comments }}
             </div>
         </div>
         <div class="button-panel col-md-2">
@@ -52,12 +51,15 @@
     </div>
 </form>
 <script>
-    $('.uploadFile').change(function () {
+    $('#uploadFile').change(function () {
         if (this.files.length > 0) {
             var value = this.value;
-            console.log(value)
+
             // 選択されたファイル情報を取得
             var file = this.files[0];
+
+            // set upload file path
+            $("#uploadFileName").val($(this).prop('files')[0].name);
 
             // readerのresultプロパティに、データURLとしてエンコードされたファイルデータを格納
             var reader = new FileReader();

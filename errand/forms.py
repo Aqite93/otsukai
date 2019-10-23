@@ -37,7 +37,14 @@ class ErrandRegisterForm(forms.ModelForm):
         widget=forms.Textarea()
     )
 
-    image = forms.FileField()
+    image = forms.FileField(
+        widget=forms.FileInput(
+            attrs={
+                "style": "display:none",
+                "id": "uploadFile"
+            }
+        )
+    )
 
     comments = forms.CharField(
         label='Description',
@@ -48,3 +55,8 @@ class ErrandRegisterForm(forms.ModelForm):
     class Meta:
         model = Errand
         fields = ('category', 'deadline', 'price', 'image', 'comments')
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs["class"] = "form-control"
