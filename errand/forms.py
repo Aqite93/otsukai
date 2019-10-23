@@ -3,15 +3,9 @@ from .models import Errand, Category
 
 
 class ErrandIndexForm(forms.ModelForm):
-    description = forms.CharField(
-        label='Description',
-        max_length=1024,
-        widget=forms.Textarea()
-    )
-
     class Meta:
         model = Errand
-        fields = ('description',)
+        fields = ('image', 'description',)
 
 
 ErrandIndexFormSet = forms.modelformset_factory(
@@ -33,8 +27,7 @@ class ErrandRegisterForm(forms.ModelForm):
     )
 
     price = forms.IntegerField(
-        label='Price',
-        widget=forms.Textarea()
+        label='Price'
     )
 
     image = forms.FileField(
@@ -46,7 +39,7 @@ class ErrandRegisterForm(forms.ModelForm):
         )
     )
 
-    comments = forms.CharField(
+    description = forms.CharField(
         label='Description',
         max_length=1024,
         widget=forms.Textarea()
@@ -54,7 +47,7 @@ class ErrandRegisterForm(forms.ModelForm):
 
     class Meta:
         model = Errand
-        fields = ('category', 'deadline', 'price', 'image', 'comments')
+        fields = ('category', 'deadline', 'price', 'image', 'description')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

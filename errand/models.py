@@ -9,7 +9,9 @@ class Errand(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     deadline = models.DateTimeField()
     price = models.IntegerField()
-    image = models.FileField(name='image')
+    image = models.ImageField(
+        name='image',
+        upload_to='photos/%Y/%m/%d/')
     description = models.TextField(blank=True,
                                    max_length=1000,
                                    help_text='依頼内容を記載してください．')

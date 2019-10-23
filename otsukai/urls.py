@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.urls import path
 from django.urls import include
+from django.conf import settings
+from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 
 urlpatterns = [
     path('accounts/', include('accounts.urls')),
@@ -23,3 +25,5 @@ urlpatterns = [
     path('', include('mail.urls')),
     path('', include('prediction.urls')),
 ]
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

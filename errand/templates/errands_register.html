@@ -3,6 +3,8 @@
 {% block page_content %}
 <h1>Register errand</h1>
 <form method="post" enctype="multipart/form-data" action="{% url 'errand:register' %}">
+    {{ form.errors }}
+    {{ form.non_field_errors }}
     {% csrf_token %}
     <div class="form-group">
         {{ formset.management_form }}
@@ -42,7 +44,7 @@
         <div class="col-md-8">
             <div class="form-group">
                 <label>Comments</label>
-                {{ form.comments }}
+                {{ form.description }}
             </div>
         </div>
         <div class="button-panel col-md-2">
