@@ -88,26 +88,26 @@ DATABASES = {
     # }
 
     # for localhost
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'otsukai',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-
-    # heroku
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'heroku_6beaad87743147d',
-    #     'USER': 'b42b4dab48487b',
-    #     'PASSWORD': '4fee621b',
-    #     'HOST': 'us-cdbr-iron-east-05.cleardb.net',
+    #     'NAME': 'otsukai',
+    #     'USER': 'root',
+    #     'PASSWORD': 'root',
+    #     'HOST': 'localhost',
     #     'PORT': '3306',
-    #     'OPTIONS': {'init_command': "SET sql_mode ='STRICT_TRANS_TABLES'",
-    #                 },
     # }
+
+    # heroku
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'heroku_6beaad87743147d',
+        'USER': 'b42b4dab48487b',
+        'PASSWORD': '4fee621b',
+        'HOST': 'us-cdbr-iron-east-05.cleardb.net',
+        'PORT': '3306',
+        'OPTIONS': {'init_command': "SET sql_mode ='STRICT_TRANS_TABLES'",
+                    },
+    }
 }
 
 
