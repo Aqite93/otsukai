@@ -35,10 +35,10 @@ class ErrandRegisterView(LoginRequiredMixin, View):
             errand.user = User.objects.get(pk=1)
             errand.save()
 
-            formset = ErrandIndexFormSet(request.POST or None)
+            formset = ErrandIndexFormSet()
 
             return render(request, 'errands_index.html', context={
-                "from": formset
+                "formset": formset
             })
         else:
             print('--- failed form valid ---')
