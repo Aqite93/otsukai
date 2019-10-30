@@ -1,3 +1,4 @@
+# exntensions
 *.pyc
 *.swp
 db.sqlite3
@@ -7,3 +8,5 @@ staticfiles
 *.jpg
 *.png
 *.jpeg
+
+# indivisuals
