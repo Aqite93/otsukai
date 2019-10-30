@@ -22,6 +22,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('errand/', include('errand.urls')),
+    path('jobs/', include('jobmatching.urls')),
     path('', include('mail.urls')),
     path('', include('prediction.urls')),
 ]
